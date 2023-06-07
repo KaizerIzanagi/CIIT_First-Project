@@ -31,9 +31,17 @@ public class TextGameManager : MonoBehaviour
     public void ScreamForHelp()
     {
         // "HP -= x" is the same as "HP = HP - x", but shorter
-        healthValue -= 33;
-        willpowerValue -= 33;
+        healthValue -= 25;
+        willpowerValue -= 25;
         storyText = "Your Scream attracted the killer to your location, and now the chase is on! You see a Pallet, a Window, and an Open Field, where do you run to?";
+
+        if (healthValue <= 0 || willpowerValue <= 0)
+        {
+            storyText = "You have died... Retry?";
+            healthValue = 0;
+            willpowerValue = 0;
+            level1_Choices.SetActive(false);
+        }
     }
 
     public void LookAround()
@@ -48,7 +56,6 @@ public class TextGameManager : MonoBehaviour
         willpowerValue -= 100;
         storyText = "Your Panic attracted the killer to your location, and you have been sacrificed immediately! Try again?";
         level1_Choices.SetActive(false);
- 
     }
 
     public void StartButton()
@@ -64,6 +71,8 @@ public class TextGameManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+   
 
     
     
