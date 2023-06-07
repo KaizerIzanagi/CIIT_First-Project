@@ -12,14 +12,12 @@ public class TextGameManager : MonoBehaviour
     // Now, DO IT MY DOOD! WRITE!!!
     public string storyText;
     // Game Object to make "Proofs" go "Poof"!
-    public GameObject level1_Choices;
+    public GameObject level1_Choices, TitleScreen, GameProper;
 
     // Start is called before the first frame update
     void Start()
     {
-        healthValue = 100;
-        willpowerValue = 100;
-        storyText = "Ugh... where am I?";
+        GameProper.SetActive(false);
     }
 
     // Update is called once per frame
@@ -42,6 +40,7 @@ public class TextGameManager : MonoBehaviour
     {
         storyText = "You look around and see a Generator, a Chest, and an Open Field. What do you do?";
     }
+
     public void Panic()
     {
         healthValue -= 100;
@@ -50,8 +49,20 @@ public class TextGameManager : MonoBehaviour
         level1_Choices.SetActive(false);
     }
 
+    public void StartButton()
+    {
+        GameProper.SetActive(true);
+        TitleScreen.SetActive(false);
+        healthValue = 100;
+        willpowerValue = 100;
+        storyText = "Ugh... where am I?";
+    }
 
+    public void ExitButton()
+    {
+        Application.Quit();
+    }
 
-
-
+    
+    
 }
