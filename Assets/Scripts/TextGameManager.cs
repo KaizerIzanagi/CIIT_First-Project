@@ -33,7 +33,7 @@ public class TextGameManager : MonoBehaviour
         // "HP -= x" is the same as "HP = HP - x", but shorter
         healthValue -= 25;
         willpowerValue -= 25;
-        storyText = "Your Scream attracted the killer to your location, and now the chase is on! You see a Pallet, a Window, and an Open Field, where do you run to?";
+        storyText = "Your Scream attracted THE IMPOSTOR to your location, and now the chase is on! You see a Pallet, a Window, and an Open Field, where do you run to?";
 
         if (healthValue <= 0 || willpowerValue <= 0)
         {
@@ -54,7 +54,7 @@ public class TextGameManager : MonoBehaviour
     {
         healthValue -= 100;
         willpowerValue -= 100;
-        storyText = "Your Panic attracted the killer to your location, and you have been sacrificed immediately! Try again?";
+        storyText = "Your Panic attracted THE IMPOSTOR to your location, and you have been sacrificed immediately! Try again?";
         level1_Choices.SetActive(false);
     }
 
