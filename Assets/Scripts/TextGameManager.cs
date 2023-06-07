@@ -40,6 +40,7 @@ public class TextGameManager : MonoBehaviour
     {
         storyText = "You look around and see a Generator, a Chest, and an Open Field. What do you do?";
     }
+    
 
     public void Panic()
     {
@@ -47,6 +48,7 @@ public class TextGameManager : MonoBehaviour
         willpowerValue -= 100;
         storyText = "Your Panic attracted the killer to your location, and you have been sacrificed immediately! Try again?";
         level1_Choices.SetActive(false);
+ 
     }
 
     public void StartButton()
