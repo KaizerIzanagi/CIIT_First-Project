@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed;
     //Variable for Input
     public Vector2 movementInput;
-    //Variable for  RigidBody2D
+    //Variable for RigidBody2D
     public Rigidbody2D rigidBody;
     //Variable for Animation
     public Animator anim;
@@ -74,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
         //Adds Velocity to the rigidbody.
         rigidBody.velocity = movementInput * moveSpeed;
     }
+    
     // Converts Input to Vector.
     private void OnMove(InputValue inputValue)
     {
